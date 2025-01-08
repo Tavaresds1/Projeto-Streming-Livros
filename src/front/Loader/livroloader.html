@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="livroloader.css">
+        <title>Carregamento do sistema</title>
+        <style>
+            #loader-container {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Loader container -->
+        <div id="loader-container">
+            <div class="book">
+                <div class="inner">
+                    <div class="left"></div>
+                    <div class="middle"></div>
+                    <div class="right"></div>
+                </div>
+                <ul>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seu conteúdo existente -->
+        <a class="dribbble" href="https://dribbble.com/shots/4405331-Loader" target="_blank">
+            <img src="image_processing20210909-26201-18y0gsx.gif" alt="Dribbble Logo">
+        </a>
+
+        <!-- Exemplo de botões para demonstração -->
+        <button>Botão Padrão</button>
+        <button class="btn">Botão com Classe</button>
+        <button data-loader-action="minhaFuncaoPersonalizada">Botão com Ação Personalizada</button>
+        <button data-no-loader>Botão sem Loader</button>
+
+        <script src="livroloader.js"></script>
+        <script src="button-loader.js"></script>
+        <script>
+            // Exemplo de função personalizada para um botão específico
+            window.minhaFuncaoPersonalizada = async function() {
+                await new Promise(resolve => setTimeout(() => {
+                    console.log("Ação personalizada concluída");
+                    resolve();
+                }, 3000));
+            }
+
+            // Exemplo de como adicionar loader a botões dinâmicos
+            function adicionarNovoBotao() {
+                const novoBotao = document.createElement('button');
+                novoBotao.textContent = 'Novo Botão Dinâmico';
+                document.body.appendChild(novoBotao);
+                
+                // Adiciona o loader ao novo botão
+                addLoaderToDynamicButtons();
+            }
+        </script>
+    </body>
+</html>

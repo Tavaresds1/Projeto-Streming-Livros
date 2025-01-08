@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página do Leitor</title>
+        <!-- Link para o seu CSS -->
+        <link rel="stylesheet" href="leitor.css">
+    </head>
+    <body>
+        <!-- Cabeçalho -->
+        <header>
+            <div id="title">
+                <h1>Fábrica de</h1>
+                <h1>Historias</h1>
+            </div>
+            <ul>
+                <a href="../LandingPage/Assinatura.html">
+                    <li>Assinatura</li>
+                </a>
+                <a href="leitor.html">
+                    <li>Obras</li>
+                </a>
+                </a>
+                <a href="#" id="user-name" onclick="logout()">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </header>
+        <!-- Fim Cabeçalho  -->
+
+        <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+
+        <!-- Título da Página -->
+        <h1>Obras Cadastradas</h1>
+
+        <!-- Container para exibir os cards -->
+        <div id="cards-container-leitor" class="cards-container">
+            <!-- Os cards de livros serão adicionados aqui dinamicamente -->
+        </div>
+  
+        <script src="leitor.js"></script>
+    </body>
+</html>

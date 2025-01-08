@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/front/Loader/livroloader.css">
+  </head>
+  <body>
+    <h1>Pagamento</h1>
+    <div class="card">
+      <p id="plano-info" style="margin-left: 5%; font-size: 25px;"></p>
+      <hr style="border: none; height: 3px; background-color: rgb(132, 14, 201); width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+      <div style="display: flex; flex-direction: column;">
+        <button id="credito" onclick="selecionarMetodoPagamento('credito')" style="margin-top: 5%;" name="metodoPagamento" value="credito">Cartão de Crédito</button>
+        <button id="debito" onclick="selecionarMetodoPagamento('debito')" style="margin-top: 5%;" name="metodoPagamento" value="debito">Cartão de Débito</button>
+        <button id="pix" onclick="selecionarMetodoPagamento('pix')" style="margin-top: 5%;" name="metodoPagamento" value="pix">Pix</button>
+      </div>
+    </div>
+
+    <button id="button" onclick="adicionarLoaderAoBotao(finalizarPagamento)" >Finalizar Pagamento</button>
+
+    <script src="pagamento.js"></script>
+    <script src="/src/front/Loader/livroloader.js"></script>
+  <!-- <script >function adicionarLoaderAoBotao(funcaoAExecutar) {
+      const loader = document.getElementById("loaderGif");
+      const buttons = document.getElementById("button");
+     
+    button.addEventListener("click", () => {
+        const originalBodyContent = document.body.innerHTML;
+
+        document.body.innerHTML = `
+        <div class="book">
+                <div class="inner">
+                    <div class="left"></div>
+                    <div class="middle"></div>
+                    <div class="right"></div>
+                </div>
+                <ul>
+                </ul>
+            </div>
+      `;
+      const ul = document.querySelector('ul');
+
+
+for (let i = 0; i < 18; i++) {
+    const li = document.createElement('li');
+    li.style.animationName = `page-${i}`;
+    ul.appendChild(li);
+}
+
+
+for (let i = 0; i < 19; i++) {
+    const delay = i * 1.86;
+    const delayAfter = i * 1.74;
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes page-${i} {
+            ${4 + delay}% {
+                transform: rotateZ(0deg) translateX(-18px);
+            }
+            ${13 + delayAfter}%, ${54 + delay}% {
+                transform: rotateZ(180deg) translateX(-18px);
+            }
+            ${63 + delayAfter}% {
+                transform: rotateZ(0deg) translateX(-18px);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+        setTimeout(() => {
+            try {
+                funcaoAExecutar();
+            } catch (error) {
+                console.error("Erro ao executar a função:", error);
+            
+            }
+        }, 1000);
+    });
+};
+
+
+
+    adicionarLoaderAoBotao(finalizarPagamento);</script> -->
+  </body>
+</html>

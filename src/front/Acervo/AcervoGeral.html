@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fábrica de Histórias</title>
+    <link rel="stylesheet" href="../pos-login/style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="title">
+            <h1>Fábrica de</h1>
+            <h1>Historias</h1>
+        </div>
+
+        <ul>
+            <a href="../LandingPage/index.html"><li>Início</li></a>
+            
+            
+        </ul>
+    </header>
+    <!-- Fim Cabeçalho  -->
+    <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+    <main>
+        
+        <!-- Inicio Titulo -->
+    <div class="container">
+    <div class="header">
+      <span>Acervo de Livros</span>
+      <div class="header-button">    
+    </div>
+    </div>
+    <!-- Fim Titulo -->
+
+
+    <!-- Inicio Cards adicionados recentemente -->
+  <div class="sec-cards">
+    <span>Adicionados recentemente</span>
+    <div id="cards-hori"></div> <!-- Os cards serão preenchidos aqui -->
+  </div>
+  <!-- Fim Cards adicionados recentemente -->
+
+<!-- Modal para consultar obras -->
+<div class="modal-container" id="modalConsultarObraLeitor">
+    <div class="modal" id="modalLeitor">
+        <form id="searchFormLeitor">
+            <label for="m-tituloLeitor">Título da obra</label>
+            <input id="m-tituloLeitor" type="text" placeholder="Digite o título da obra" required />
+            <button type="submit" id="btnBuscarLeitor">Buscar</button>
+        </form>
+        <div id="resultadosConsultaLeitor"></div> <!-- Div para exibir os resultados -->
+    </div>
+</div>
+
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fábrica de Histórias</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="title">
+            <h1>Fábrica de</h1>
+            <h1>Historias</h1>
+        </div>
+
+        <ul>
+            <a href="../LandingPage/index.html">
+                <li>Início</li>
+            </a>              
+            </a>
+            <a href="../Acervo/cadastroobra.html">
+                <li>Acervos</li>
+            </a>
+            <a href="../Login/Login.html" id="inscreva-se-btn">
+                <li>Já tem uma conta?</li>
+            </a>
+        </ul>
+    </header>
+    <!-- Fim Cabeçalho  -->
+    <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="loginForm" class="form">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" placeholder="Digite seu email" required>
+                <label for="loginPassword">Senha:</label>
+                <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
+                <button type="submit">Entrar</button>
+                <p>Não tem uma conta? <a href="registro.html">Cadastre-se aqui</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

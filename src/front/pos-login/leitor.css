@@ -1,0 +1,685 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  body{
+    background-color: rgb(14, 13, 13);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  /* Inicio Cabeçalho */
+  
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #title{
+    flex-direction: column;
+    line-height: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 10px;
+    
+  }
+  #title h1{
+    padding-top: 10%;
+  }
+  li{
+    display: inline-block;
+    margin: 20px;
+  }
+  
+  a{
+    color: white;
+  }
+  
+  a:hover{
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+  }
+  
+  #inscreva-se-btn{
+    border: 2px solid rgb(132, 14, 201);
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  #inscreva-se-btn:hover{
+    background-color: rgb(36, 2, 56);
+    color: white;
+  }
+  
+  h1{
+    font-weight: 200;
+    color: white;
+    
+  }
+  
+  /* Fim Cabeçalho */
+  
+  
+  /* Estilo para o container do acervo */
+#acervo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexível, com 200px mínimo por card */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px;
+}
+
+/* Estilo do card */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo da imagem do card */
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Corpo do card */
+.card-body {
+    padding: 15px;
+}
+
+/* Título do card */
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Descrição do card */
+.card-text {
+    font-size: 1em;
+    color: #555;
+}
+
+  
+  /* inicio Responsividade */
+  @media screen and (max-width: 760px){
+  
+    header{
+        flex-direction: column;
+    }
+  
+    main{
+        flex-direction: column;
+    }
+  
+    h2{
+        font-size: 38px;
+    }
+  
+    form{
+        margin: 0 auto;
+        width: 100%;
+    }
+  
+    input{
+        align-self: center;
+    }
+  
+    img{
+        display: none;
+    }
+  
+    ul{
+        text-align: center;
+    }
+  }
+  /* Fim Responsividade */
+  
+  
+  /* Inicio Titulo */
+  
+  .header {
+    width: 90%;
+    height: 80%;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto 12px;
+  }
+  .header-button{
+   
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .header span {
+    font-weight: bold;
+    font-size: 50px;
+    word-break: break-all;
+  }
+  /* Fim Titulo */
+  
+  
+  #cards-hori {
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Define um espaçamento uniforme entre os cards */
+    justify-content: flex-start; /* Alinha os cards à esquerda */
+  }
+  
+  .card{
+    text-align: center;
+    color: #161515;
+    box-shadow: 0 0 10px rgb(132, 14, 201);
+    border-radius: 15px;    
+  }
+  .card-body{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(35, 41, 41);
+  }
+  .card img{
+    width: 18em;
+  }
+  .card-body .btn{
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    border: 2px solid rgb(132, 14, 201);
+    border-radius: 15px;
+  }
+  
+  .card-body a .btn {
+    text-decoration: none;
+    color: rgb(14, 13, 13);
+    font-size: 15px;
+  }
+  .card .btn:hover{
+    background-color: rgb(36, 2, 56);
+    border-color: rgb(36, 2, 56);
+    color: white;
+  }
+  
+  .area-livro{
+    margin-left: 3%;
+    width: 95vw;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+  }
+  
+  #img-livro img{
+    padding-top: 10px;
+    width: 60em;
+  }
+  
+  #titulo-livro{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  #descricao-livro{
+    margin-top: 1%;
+    width: 55%;
+  }
+  
+  #data-publicacao{
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+  }
+  
+  #numero-pagina{
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+  }
+  .btn-livro{
+    width: 60   px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 10%;
+  }
+  
+  
+  
+  
+  
+  /* Cadastro Obra */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  body{
+    background-color: rgb(14, 13, 13);
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: #663399;
+    font-weight: bold;
+  }
+  
+  .card button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    background-color: #e5533b;
+  }
+  
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  header .title {
+    color:White;
+  }
+  
+  .sec-cards span{
+    color: white;
+  }
+  
+  li{
+    display: inline-block;
+    margin: 20px;
+  }
+  
+  a{
+    color: white;
+  }
+  
+  a:hover{
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+  }
+  
+  #inscreva-se-btn{
+    border: 2px solid rgb(132, 14, 201);
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  #inscreva-se-btn:hover{
+    background-color: rgb(36, 2, 56);
+    color: white;
+  }
+  
+  
+  
+  .header span {
+    font-weight: 900;
+    font-size: 20px;
+    word-break: break-all;
+  }
+  
+  #new {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #333;
+  }
+  
+  .divTable {
+    padding: 10px;
+    width: 100%;
+    /* Ajuste para 100% da largura do container */
+    height: inherit;
+    overflow: auto;
+  }
+  
+  .divTable::-webkit-scrollbar {
+    width: 12px;
+    background-color: whitesmoke;
+  }
+  
+  .divTable::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: darkgray;
+  }
+  
+  table {
+    width: 100%;
+    border-spacing: 10px;
+    word-break: break-all;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: whitesmoke;
+  }
+  
+  tbody tr td {
+    vertical-align: text-top;
+    padding: 6px;
+    /* Limitar o conteúdo para uma linha e adicionar reticências caso necessário */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  thead tr th {
+    padding: 5px;
+    text-align: start;
+    margin-bottom: 50px;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Oculta o texto que excede o espaço */
+    text-overflow: ellipsis; /* Adiciona reticências para texto longo */
+  }
+  
+  tbody tr {
+    margin-bottom: 50px;
+  }
+  
+  thead tr th.acao {
+    width: 100px !important;
+    text-align: center;
+  }
+  
+  tbody tr td.acao {
+    text-align: center;
+  }
+  
+  @media (max-width: 700px) {
+    body {
+        font-size: 10px;
+    }
+  
+    .header span {
+        font-size: 15px;
+    }
+  
+    #new {
+        padding: 5px;
+        font-size: 10px;
+    }
+  
+    thead tr th.acao {
+        width: auto !important;
+    }
+  
+    td button i {
+        font-size: 20px !important;
+    }
+  
+    td button i:first-child {
+        margin-right: 0;
+    }
+  
+    .modal {
+        width: 90% !important;
+    }
+  
+    .modal label {
+        vertical-align: text-top;
+        padding: 6px;
+        white-space: nowrap;
+        /* Força o texto a ficar em uma linha */
+        overflow: hidden;
+        /* Esconde o excesso de texto */
+        text-overflow: ellipsis;
+        /* Adiciona "..." no fim se o texto for muito longo */
+    }
+  }
+  
+  .modal-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+  }
+  .resultado-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+  }
+  
+  .modal label {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .modal input {
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  #btnSalvar{
+    height: 25px;
+  }
+  .modal button {
+    width: 100%;
+    margin: 10px auto;
+    outline: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    border: none;
+    background-color: #333;
+    color: white;
+  }
+  
+  .active {
+    display: flex;
+  }
+  
+  .active .modal {
+    animation: modal .4s;
+  }
+  
+  @keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+  
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  td button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  td button i {
+    font-size: 25px;
+  }
+  
+  td button i:first-child {
+    margin-right: 10px;
+  }
+  
+  .descricao {
+    max-width: 100px; /* Largura máxima inicial */
+    overflow: hidden; /* Oculta o texto que excede */
+    white-space: nowrap; /* Não permite que o texto quebre em várias linhas */
+    text-overflow: ellipsis; /* Adiciona reticências (...) para texto longo */
+    transition: max-width 0.3s; /* Transição suave ao expandir */
+    word-break: break-word; /* Permite que as palavras sejam quebradas de forma mais natural */
+  }
+  
+  /* Expande a descrição ao passar o mouse sobre a linha */
+  tr:hover .descricao {
+    max-width: none; /* Remove a restrição de largura ao passar o mouse */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+  }
+  
+  
+  /* Cadastro Obra */ 
+  
+  /* Acervo Geral */
+  /* Estilo para o container dos cards */
+  .sec-cards {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  #cards-hori {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards "quebrem" para a próxima linha */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 10px;
+  }
+  
+  /* Estilo para os cards */
+  .card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%; /* Faz com que a imagem preencha o card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card .card-body {
+    padding: 15px;
+  }
+  
+  .card .card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+  }
+  
+  .card .card-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .card .btn {
+    background-color: #843ec9;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .card .btn:hover {
+    background-color: #6e31a7;
+  }
+  
+  

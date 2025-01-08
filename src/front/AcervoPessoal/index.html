@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acevo Pessoal</title>
+    <link rel="stylesheet" href="Style/style_cadastro_obra.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"></div>
+      <ul class="nav-links">
+        <li><a href="../LandingPage/index.html">Início</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <!-- Inicio Titulo -->
+      <div class="header">
+        <span style="font-size: 29px; margin-left: 2%;">Acervo Pessoal</span>
+        <button id="openModalButton">Abrir Modal</button>
+        <a href="../Acervo/cadastroobra.html"><button  id="new">Voltar</button></a>
+      </div>
+      <!-- Fim Titulo -->
+
+      <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+    
+      <!-- Inicio Cards Favoritos -->
+      <div id="sec-cards">
+        <span>Livros favoritos</span>
+        <div id="cards-hori">
+          <div class="card" style="width: 18rem;">
+            <img src="Img/1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fw-bold"></h5>
+              <p class="card-text"></p>
+              <a href="paginaLivro.html"><button class="btn">Acessar</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fim Cards Favoritos -->
+
+      <div id="bookModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal()">&times;</span>
+          <h2>Adicionar Novo Livro</h2>
+          <form id="bookForm">
+            <label for="bookTitle">Título</label>
+            <input type="text" id="bookTitle" required>
+      
+            <label for="bookDescription">Descrição</label>
+            <input type="text" id="bookDescription" required>
+      
+            <label for="bookImageUrl">URL da Imagem</label>
+            <input type="file" id="bookImageUrl" required>
+      
+            <label for="bookLink">Link do Livro</label>
+            <input type="text" id="bookLink" required>
+      
+            <button type="submit">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script src="scriptAcervo.js"></script>
+  </body>
+</html>

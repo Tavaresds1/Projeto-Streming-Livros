@@ -1,0 +1,147 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(14, 13, 13);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/*Começo do cabeçalho*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header button {
+    margin-left: 90%;
+    width: 100px;
+    height: 50px;
+}
+
+#title {
+    flex-direction: column;
+    line-height: 10px;
+}
+
+li {
+    display: inline-block;
+    margin: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+}
+
+#inscreva-se-btn {
+    border: 2px solid rgb(132, 14, 201);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#inscreva-se-btn:hover {
+    background-color: rgb(36, 2, 56);
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-weight: 100;
+}
+/*Fim do cabeçalho*/
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgb(132, 14, 201);
+    border: 2px solid rgb(132, 14, 201);
+    margin-bottom: 40px;
+    padding: 20px;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+
+.data-button {
+    color: white;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    border-radius: 5px;
+    background-color: rgb(132, 14, 201);
+    border: 2px solid rgb(132, 14, 201);
+    box-shadow: 0 0px 3px rgb(132, 14, 201);
+}
+
+.data-button.active {
+    transform: translateZ(5px);
+    background-color: rgb(111, 10, 150);
+}
+
+.data-button:hover {
+    background-color: rgb(111, 10, 150);
+}
+
+.chart-title {
+    text-align: center; /* Centraliza o título horizontalmente */
+    font-size: 1.2em; /* Ajusta o tamanho da fonte */
+    width: 100%; /* Garante que o título ocupe todo o topo do container */
+    margin-bottom: 15px; /* Espaçamento entre título e gráfico */
+    font-weight: bold;
+}
+
+.chart-container canvas {
+    max-width: 100%; /* Garante que o gráfico não transborde */
+    height: auto; /* Mantém a proporção do gráfico */
+}
+
+h3 {
+    display: block;
+    margin-top: 0;
+}
+
+.container h1 {
+    text-align: center;
+    color: white;
+}
+
+
+.info {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,0 +1,246 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(14, 13, 13);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Inicio Cabeçalho */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title {
+    flex-direction: column;
+    line-height: 10px;
+}
+
+.assinatura{
+    padding-top: 10%;
+  }
+header li {
+    display: inline-block;
+    margin: 20px;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+}
+
+#inscreva-se-btn {
+    border: 2px solid rgb(132, 14, 201);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#inscreva-se-btn:hover {
+    background-color: rgb(36, 2, 56);
+    color: white;
+}
+
+h1 {
+    font-weight: 200;
+}
+/* Fim Cabeçalho */
+
+/* Inicio Apresentação Ideia */
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    height: 40em;
+}
+
+h2 {
+    font-size: 56px;
+    line-height: 10px;
+}
+
+span {
+    color: rgb(132, 14, 201);
+}
+
+p {
+    line-height: 25px;
+    max-width: 700px;
+    font-size: 28px;
+}
+
+img {
+    width: 580px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+form [type="submit"] {
+    height: 50px;
+    width: 50%;
+    background-color: rgb(132, 14, 201);
+    color: white;
+    font-weight: bold;
+}
+form [type="submit"]:hover {
+    cursor: pointer;
+}
+
+input {
+    margin-top: 20px;
+    height: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+}
+/* Fim Apresentação Ideia */
+
+/* Inicio Quem somos */
+.quem-somos {
+    display: flex;
+    flex-direction: row;
+    height: 40em;
+    justify-content: center;
+    align-items: center;
+}
+
+.quem-somos aside h2 {
+    padding-left: 35%;
+}
+/* Fim Quem somos */
+
+/* Inicio Beneficios */
+.processo {
+    display: flex;
+    height: 80em;
+    width: 50vw;
+    padding-left: 15%;
+}
+.processo-leitor {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.processo-leitor aside h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.processo-escritor aside h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.processo-escritor {
+    width: 50%;
+    height: 90%;
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Fim Beneficios */
+
+/* inicio Responsividade */
+@media screen and (max-width: 760px) {
+    header {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    input {
+        align-self: center;
+    }
+
+    img {
+        display: none;
+    }
+
+    ul {
+        text-align: center;
+    }
+}
+/* Fim Responsividade */
+
+/* Inicio Animação Scroll */
+[data-anime] {
+    opacity: 0;
+    transition: .4s;
+}
+
+[data-anime="left"] {
+    transform: translate3d(-50px,0 ,0);
+}
+
+[data-anime="right"] {
+    transform: translate3d(50px,0 ,0);
+}
+ 
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+/* Fim animação Scroll */
+
+.assinatura {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.assinatura .card {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 0 0 10px rgb(132, 14, 201);
+    border: 2px solid rgb(132, 14, 201);
+}
+
+.assinatura .card button {
+    border: 2px solid rgb(132, 14, 201);
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 20%;
+    background-color: rgb(14, 13, 13);
+    color: white;
+}
+
+.assinatura .card button:hover {
+    background-color: rgb(36, 2, 56);
+    cursor: pointer;
+}

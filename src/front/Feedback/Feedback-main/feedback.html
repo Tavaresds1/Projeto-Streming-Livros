@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"integrity="sha384=vp86wTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIV/Y4HV4d36p2irVfcrp" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./feedback.css" />
+        <link rel="stylesheet" href="avaliacao.css"> <!-- Adicionando a referência ao avaliacao.css -->
+        <link rel="stylesheet" href="/src/front/Loader/livroloader.css">
+        <title>Feedback System</title>
+    </head>
+    <body>
+        <div class="feedback-container">
+            <h1>Feedback</h1>
+            <p>Seu feedback é muito importante para nós</p>
+
+            <div class="rating-container">
+                <div class="stars" id="stars">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <input type="range" id="rating" min="0" max="5" step="0.1" style="display: none;">
+                <div id="message" class="message"></div>
+            </div>
+
+            <p class="question">Comentários</p>
+            <textarea id="textarea" cols="20" rows="5"></textarea>
+
+            <p class="question">Deseja compartilhar isso publicamente?</p>
+            <div class="checkbox-btns">
+                <div class="one-btn">
+                    <input type="checkbox" id="Yes" />
+                    <label for="Yes">Sim</label>
+                </div>
+                <div class="one-btn">
+                    <input type="checkbox" id="No" />
+                    <label for="No">Não</label>
+                </div>
+            </div>
+
+            <div class="accept">
+                <input type="checkbox" id="accept" />
+                <label for="accept">Eu aceito o <a href="#">Termos e Condições</a></label>
+            </div>
+
+            <div class="center">
+               <a href="/src/front/pos-login/leitor.html"><button class="btn button" id="button" onclick="feedbackRealizado()">Compartilhar</button></a>
+            </div>
+        </div>
+
+        <script src="./avaliacao.js"></script> <!-- Incluindo o JS da avaliação -->
+        <script src="./app.js"></script> 
+        <script src="/src/front/Loader/livroloader.js"></script> 
+
+        
+        <!-- Adicionando o script para garantir que as checkboxes são excludentes -->
+        <script>
+
+            function feedbackRealizado() {
+                alert("Feedback enviado com sucesso!!")
+            }
+            // Lógica para tornar as opções "Sim" e "Não" excludentes
+            document.getElementById('Yes').addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('No').checked = false;
+                }
+            });
+
+            document.getElementById('No').addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('Yes').checked = false;
+                }
+            });
+
+            // Lógica para obrigar o preenchimento do campo de comentário
+            document.getElementById('button').addEventListener('click', function(event) {
+                var comment = document.getElementById('textarea').value.trim();
+                var stars = document.querySelectorAll('#stars .star.selected').length;
+                
+                // Verifica se o campo de comentários e as estrelas foram preenchidos
+                if (comment === "") {
+                    alert("Por favor, preencha o campo de comentário antes de compartilhar.");
+                    event.preventDefault();  // Impede o envio do feedback
+                    return;
+                }
+
+                if (stars === 0) {
+                    alert("Por favor, selecione o número de estrelas para a avaliação.");
+                    event.preventDefault();  // Impede o envio do feedback
+                    return;
+                }
+            });
+
+            // Lógica para selecionar as estrelas
+            document.querySelectorAll('.star').forEach(function(star) {
+                star.addEventListener('click', function() {
+                    var value = this.getAttribute('data-value');
+                    document.querySelectorAll('.star').forEach(function(s) {
+                        s.classList.remove('selected');
+                    });
+                    for (var i = 0; i < value; i++) {
+                        document.querySelectorAll('.star')[i].classList.add('selected');
+                    }
+                });
+            });
+            function adicionarLoaderAoBotao(funcaoAExecutar) {
+    const loader = document.getElementById("loaderGif");
+    const buttons = document.getElementById("button");
+   
+  button.addEventListener("click", () => {
+      const originalBodyContent = document.body.innerHTML;
+
+      document.body.innerHTML = `
+      <div class="book">
+              <div class="inner">
+                  <div class="left"></div>
+                  <div class="middle"></div>
+                  <div class="right"></div>
+              </div>
+              <ul>
+              </ul>
+          </div>
+    `;
+    const ul = document.querySelector('ul');
+
+
+for (let i = 0; i < 18; i++) {
+  const li = document.createElement('li');
+  li.style.animationName = `page-${i}`;
+  ul.appendChild(li);
+}
+
+
+for (let i = 0; i < 19; i++) {
+  const delay = i * 1.86;
+  const delayAfter = i * 1.74;
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+      @keyframes page-${i} {
+          ${4 + delay}% {
+              transform: rotateZ(0deg) translateX(-18px);
+          }
+          ${13 + delayAfter}%, ${54 + delay}% {
+              transform: rotateZ(180deg) translateX(-18px);
+          }
+          ${63 + delayAfter}% {
+              transform: rotateZ(0deg) translateX(-18px);
+          }
+      }
+  `;
+  document.head.appendChild(style);
+}
+      setTimeout(() => {
+          try {
+              funcaoAExecutar();
+          } catch (error) {
+              console.error("Erro ao executar a função:", error);
+          
+          }
+      }, 1000);
+  });
+};
+
+
+
+  adicionarLoaderAoBotao(()=>{
+    document.getElementById('button').addEventListener('click', function(event) {
+                var comment = document.getElementById('textarea').value.trim();
+                var stars = document.querySelectorAll('#stars .star.selected').length;
+                
+                // Verifica se o campo de comentários e as estrelas foram preenchidos
+                if (comment === "") {
+                    alert("Por favor, preencha o campo de comentário antes de compartilhar.");
+                    event.preventDefault();  // Impede o envio do feedback
+                    return;
+                }
+
+                if (stars === 0) {
+                    alert("Por favor, selecione o número de estrelas para a avaliação.");
+                    event.preventDefault();  // Impede o envio do feedback
+                    return;
+                }
+            });
+  });
+        </script>
+    </body>
+</html>

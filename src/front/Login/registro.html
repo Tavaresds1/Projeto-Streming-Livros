@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Fábrica de Histórias</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="title">
+            <h1>Fábrica de</h1>
+            <h1>Historias</h1>
+        </div>
+
+        <ul>
+            <a href="#">
+                <li>Início</li>
+            </a>              
+            </a>
+            <a href="../Acervo/cadastroobra.html">
+                <li>Acervos</li>
+            </a>
+            <a href="../Login/Login.html" id="inscreva-se-btn">
+                <li>Já tem uma conta?</li>
+            </a>
+        </ul>
+    </header>
+    <!-- Fim Cabeçalho  -->
+    <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+    <main>
+        <div class="login-container">
+            <h2>Cadastro</h2>
+            <form id="registerForm" class="form">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" placeholder="Digite seu email" required>
+                <label for="registerPassword">Senha:</label>
+                <input type="password" id="registerPassword" placeholder="Digite sua senha" required>
+                <label for="registerRole">Você é:</label>
+                <select id="registerRole" required>
+                    <option value="">Selecione</option>
+                    <option value="writer">Escritor</option>
+                    <option value="reader">Leitor</option>
+                </select>
+                <button type="submit">Cadastrar</button>
+                <p>Já tem uma conta? <a href="login.html">Entre aqui</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fábrica de Histórias</title>
+    <link rel="stylesheet" href="escritor.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="title">
+            <h1>Fábrica de</h1>
+            <h1>Historias</h1>
+        </div>
+
+        <ul>
+            <a href=""><li>Início</li></a>
+            <a href="#"><li>Cadastrar Obras</li></a>
+            <a href="" id="user-name"></a>
+            <button onclick="logout()">logout</button>
+        </ul>
+    </header>
+    <!-- Fim Cabeçalho  -->
+    <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+    <main>
+        
+        <div class="container">
+            <div class="header">
+              <span>Cadastro de Obras</span>
+              <button onclick="openModalObra()" id="new">Incluir</button>
+            </div>
+      
+            <!-- Área onde os cards das obras aparecerão -->
+            <div class="cards-container" id="cards-container">
+              <!-- Os cards das obras serão gerados dinamicamente aqui -->
+            </div>
+      
+            <div class="modal-container" id="modal-container">
+              <div class="modal">
+                <form id="obras-form" onsubmit="salvarObra(event)">
+                  <label for="m-titulo">Título</label>
+                  <input id="m-titulo" type="text" required />
+      
+                  <label for="m-descricao">Descrição</label>
+                  <input id="m-descricao" type="text" required />
+      
+                  <label for="m-dataPublicacao">Data Publicação</label>
+                  <input id="m-dataPublicacao" type="date" required />
+      
+                  <label for="m-paginas">Número de Páginas</label>
+                  <input id="m-paginas" type="number" required />
+      
+                  <label for="m-pdf">Arquivo PDF Livro</label>
+                  <input id="m-pdf" type="file" accept="application/pdf" required />
+      
+                  <button type="submit" id="btnSalvar">Salvar</button>
+                  <button type="button" id="btnCancelar" onclick="closeModalObra()">Cancelar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+    
+        </main>
+
+    <script src="escritor.js"></script>
+</body>
+</html>

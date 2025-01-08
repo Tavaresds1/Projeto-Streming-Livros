@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Indicadores de Desempenho</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div id="title">
+                <h1>Fábrica de</h1>
+                <h1>Historias</h1>
+            </div>
+      
+            <ul>
+              <a href="/src/front/LandingPage/index.html"><li>Início</li></a>
+              <a href="../CadastroObra/index.html"><li>Cadastrar Obra</li></a>
+              <a href="../Acervo/cadastroobra.html"><li>Acervo</li></a>
+              <a href="../Login/index.html" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+            </ul>
+        </header>
+
+        <div class="container">
+            <h1>Indicadores de Desempenho da Plataforma</h1>
+            
+            <!-- Gráfico de Crescimento Mensal de Usuários -->
+            <div class="chart-container">
+                <h3 class="chart-title">Crescimento Mensal de Usuários</h3>
+                <canvas id="usuariosChart"></canvas>
+                <div class="buttons">
+                    <button class="data-button" onclick="changeData('mensal', 'usuarios')">MESES</button>
+                    <button class="data-button" onclick="changeData('semanal', 'usuarios')">SEMANAS</button>
+                </div>
+                <p class="info">Crescimento: 20%</p>
+            </div>
+
+            <!-- Gráfico de Número de Obras Cadastradas -->
+            <div class="chart-container">
+                <h3 class="chart-title">Número de Obras Cadastradas</h3>
+                <canvas id="obrasChart"></canvas>
+                <div class="buttons">
+                    <button class="data-button" onclick="changeData('mensal', 'obras')">MESES</button>
+                    <button class="data-button" onclick="changeData('semanal', 'obras')">SEMANAS</button>
+                </div>
+                <p class="info">Total de Obras: 150</p>
+            </div>
+
+            <!-- Gráfico de Feedbacks Recebidos -->
+            <div class="chart-container">
+                <h3 class="chart-title">Número de Feedbacks Recebidos</h3>
+                <canvas id="feedbacksChart"></canvas>
+                <div class="buttons">
+                    <button class="data-button" onclick="changeData('mensal', 'feedbacks')">MESES</button>
+                    <button class="data-button" onclick="changeData('semanal', 'feedbacks')">SEMANAS</button>
+                </div>
+                <p class="info">Total de Feedbacks: 75</p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

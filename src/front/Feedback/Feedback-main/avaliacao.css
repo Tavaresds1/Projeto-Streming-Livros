@@ -1,0 +1,50 @@
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.rating-container {
+    text-align: center;
+    background-color: transparent; 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.stars {
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.star {
+    color: lightgray; 
+}
+
+.star.red {
+    color: red;
+}
+
+.star.orange {
+    color: orange;
+}
+
+.star.yellow {
+    color: yellow;
+}
+
+.star.lightgreen {
+    color: rgb(93, 198, 93);
+}
+
+.star.darkgreen {
+    color: rgb(59, 138, 59);
+}
+.message {
+    margin-top: 15px;
+    font-size: 17px;
+    color: rgb(131, 87, 170); 
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .hidden { display: none; }
+        input, select, button { margin: 5px 0; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div id="authSection">
+        <h1>Sistema de Cadastro e Login</h1>
+        <div id="registerSection">
+            <h2>Cadastro</h2>
+            <input type="text" id="registerUsername" placeholder="Nome de Usuário" required>
+            <input type="password" id="registerPassword" placeholder="Senha" required>
+            <select id="registerRole" required>
+                <option value="">Selecione seu Papel</option>
+                <option value="writer">Escritor</option>
+                <option value="reader">Leitor</option>
+            </select>
+            <button id="registerBtn">Cadastrar</button>
+        </div>
+        <hr>
+        <div id="loginSection">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Nome de Usuário" required>
+            <input type="password" id="loginPassword" placeholder="Senha" required>
+            <button id="loginBtn">Entrar</button>
+        </div>
+    </div>
+
+    <div id="writerSection" class="hidden">
+        <h1>Bem-vindo Escritor, <span id="usernameWriter"></span>!</h1>
+        <h3>Suas Obras:</h3>
+        <ul id="writerBooks"></ul>
+        <input type="text" id="bookTitle" placeholder="Título da Obra">
+        <button id="addBookBtn">Cadastrar Obra</button>
+        <button id="logoutWriter">Sair</button>
+    </div>
+
+    <div id="readerSection" class="hidden">
+        <h1>Bem-vindo Leitor, <span id="usernameReader"></span>!</h1>
+        <h3>Obras Disponíveis:</h3>
+        <ul id="availableBooks"></ul>
+        <h3>Seu Acervo:</h3>
+        <ul id="readerCollection"></ul>
+        <button id="logoutReader">Sair</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+  // Seleção de elementos
+const registerUsername = document.getElementById('registerUsername');
+const registerPassword = document.getElementById('registerPassword');
+const registerRole = document.getElementById('registerRole');
+const registerBtn = document.getElementById('registerBtn');
+
+const loginUsername = document.getElementById('loginUsername');
+const loginPassword = document.getElementById('loginPassword');
+const loginBtn = document.getElementById('loginBtn');
+
+const authSection = document.getElementById('authSection');
+const writerSection = document.getElementById('writerSection');
+const readerSection = document.getElementById('readerSection');
+const usernameWriter = document.getElementById('usernameWriter');
+const usernameReader = document.getElementById('usernameReader');
+const logoutWriter = document.getElementById('logoutWriter');
+const logoutReader = document.getElementById('logoutReader');
+
+const writerBooks = document.getElementById('writerBooks');
+const bookTitle = document.getElementById('bookTitle');
+const addBookBtn = document.getElementById('addBookBtn');
+const availableBooks = document.getElementById('availableBooks');
+const readerCollection = document.getElementById('readerCollection');
+
+// Funções auxiliares para manipular usuários e dados
+function getUsers() {
+    return JSON.parse(localStorage.getItem('users')) || [];
+}
+
+function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+function getBooks() {
+    return JSON.parse(localStorage.getItem('books')) || [];
+}
+
+function saveBooks(books) {
+    localStorage.setItem('books', JSON.stringify(books));
+}
+
+function getReaderCollection() {
+    return JSON.parse(localStorage.getItem('readerCollection')) || [];
+}
+
+function saveReaderCollection(collection) {
+    localStorage.setItem('readerCollection', JSON.stringify(collection));
+}
+
+// Cadastro de usuário
+registerBtn.addEventListener('click', () => {
+    const username = registerUsername.value.trim();
+    const password = registerPassword.value.trim();
+    const role = registerRole.value;
+
+    if (!username || !password || !role) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    const users = getUsers();
+    if (users.find(user => user.username === username)) {
+        alert('Usuário já cadastrado.');
+        return;
+    }
+
+    users.push({ username, password, role });
+    saveUsers(users);
+    alert('Usuário cadastrado com sucesso!');
+    registerUsername.value = '';
+    registerPassword.value = '';
+    registerRole.value = '';
+});
+
+// Login de usuário
+loginBtn.addEventListener('click', () => {
+    const username = loginUsername.value.trim();
+    const password = loginPassword.value.trim();
+
+    if (!username || !password) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    const users = getUsers();
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
+        alert('Login bem-sucedido!');
+        if (user.role === 'writer') {
+            showWriterPanel(username);
+        } else if (user.role === 'reader') {
+            showReaderPanel(username);
+        }
+    } else {
+        alert('Usuário ou senha inválidos.');
+    }
+});
+
+// Exibir painel do escritor
+function showWriterPanel(username) {
+    authSection.classList.add('hidden');
+    writerSection.classList.remove('hidden');
+    usernameWriter.textContent = username;
+    renderWriterBooks();
+}
+
+// Exibir painel do leitor
+function showReaderPanel(username) {
+    authSection.classList.add('hidden');
+    readerSection.classList.remove('hidden');
+    usernameReader.textContent = username;
+    renderAvailableBooks();
+    renderReaderCollection();
+}
+
+// Logout
+logoutWriter.addEventListener('click', () => {
+    authSection.classList.remove('hidden');
+    writerSection.classList.add('hidden');
+});
+
+logoutReader.addEventListener('click', () => {
+    authSection.classList.remove('hidden');
+    readerSection.classList.add('hidden');
+});
+
+// Escritor: Adicionar e renderizar livros
+addBookBtn.addEventListener('click', () => {
+    const title = bookTitle.value.trim();
+    if (!title) {
+        alert('Por favor, insira um título.');
+        return;
+    }
+    const books = getBooks();
+    books.push(title);
+    saveBooks(books);
+    bookTitle.value = '';
+    renderWriterBooks();
+});
+
+function renderWriterBooks() {
+    const books = getBooks();
+    writerBooks.innerHTML = books.map(book => `<li>${book}</li>`).join('');
+}
+
+// Leitor: Renderizar obras e acervo
+function renderAvailableBooks() {
+    const books = getBooks();
+    availableBooks.innerHTML = books.map((book, index) => `
+        <li>
+            ${book} 
+            <button onclick="addToCollection(${index})">Adicionar ao Acervo</button>
+        </li>
+    `).join('');
+}
+
+function renderReaderCollection() {
+    const collection = getReaderCollection();
+    readerCollection.innerHTML = collection.map(book => `<li>${book}</li>`).join('');
+}
+
+window.addToCollection = function (index) {
+    const books = getBooks();
+    const collection = getReaderCollection();
+    const book = books[index];
+
+    if (!collection.includes(book)) {
+        collection.push(book);
+        saveReaderCollection(collection);
+        renderReaderCollection();
+        alert('Livro adicionado ao seu acervo!');
+    } else {
+        alert('Este livro já está no seu acervo.');
+    }
+};
+
+</script>
+</html>

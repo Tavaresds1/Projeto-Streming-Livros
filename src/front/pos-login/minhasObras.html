@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Acervo - Fábrica de Histórias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="title">
+            <h1>Fábrica de</h1>
+            <h1>Histórias</h1>
+        </div>
+
+        <ul>
+            <a href="index.html"><li>Início</li></a>
+            <a href="/src/front/Acervo/AcervoGeral.html"><li>Cadastrar Obras</li></a>
+            <a href="meuAcervo.html"><li>Meu Acervo</li></a>
+            <a href="AcervoPessoal.html"><li>Perfil</li></a>
+            <button onclick="logout()">logout</button>
+        </ul>
+    </header>
+    <!-- Fim Cabeçalho -->
+    <hr style="border: none; height: 2px; background-color: rgb(132, 14, 201); width: 90%;margin-left: 5%; margin-right: 5%;">
+
+    <!-- Conteúdo principal -->
+    <main>
+        <h2>Meu Acervo</h2>
+        <div class="cards-container" id="meu-acervo-container">
+            <!-- As obras cadastradas pelo usuário serão exibidas aqui -->
+        </div>
+    </main>
+
+    <script src="scriptMeuAcervo.js"></script>
+</body>
+</html>

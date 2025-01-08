@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(14, 13, 13);
+  color: white;
+  justify-content: center;
+}
+
+.plan-container button, #form-cartao button, button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 2px solid rgb(132, 14, 201);
+  padding: 10px;
+  border-radius: 15px;
+  margin-left: 20%;
+  background-color: rgb(14, 13, 13);
+  color: white;
+  margin: 5px;
+  box-shadow: 0 0 10px rgb(132, 14, 201);
+  font-size: 20px;
+}
+
+button:hover {
+  border: 2px solid rgb(102, 36, 141);
+}
+
+.selected-button {
+  background-color: rgb(132, 14, 201); /* Cor do botão selecionado */
+  color: white;
+  border-color: white; /* Bordas do botão selecionado */
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="date"] {
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#qr-code {
+  width: 200px;
+  height: 200px;
+  background: #ddd;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.card {
+  position: relative;
+  width: 500px;
+  height: 370px;
+  margin: 30px;
+  border: 2px solid rgb(132, 14, 201);
+}
+
+#loaderGif { color: #4413ad; 
+
+}

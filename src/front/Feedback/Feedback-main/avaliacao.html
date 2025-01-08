@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="avaliacao.css">
+    <title>Barra de Avaliação</title>
+</head>
+<body>
+    <div class="rating-container">
+        <div class="stars">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+        <input type="range" id="rating" min="0" max="5" step="0.1" style="display: none;">
+        <div id="message" class="message"></div>
+    </div>
+    <script src="avaliacao.js"></script>
+</body>
+</html>
